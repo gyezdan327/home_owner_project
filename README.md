@@ -1,1 +1,1 @@
-# home_owner_project.github.io
+https://gyezdan327.github.io/home_owner_project/
