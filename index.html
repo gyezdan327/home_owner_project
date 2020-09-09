@@ -8,13 +8,22 @@
     </style>
 
     <!-- Necessary imports for firebase -->
+    <script type='text/javascript' src='config.js'></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
     <script>
-      //Import the config file
-      const config = require("../config");
+      //Define credentials from config.js
+      config = {
+        apiKey: fireBaseConfig.apiKey,
+        authDomain: fireBaseConfig.authDomain,
+        databaseURL: fireBaseConfig.databaseURL,
+        projectId: fireBaseConfig.projectId,
+        storageBucket: fireBaseConfig,storageBucket,
+        messagingSenderId: fireBaseConfig.messagingSenderId,
+        appId: fireBaseConfig.appId
+      };
 
       // Initialize Firebase
       firebase.initializeApp(config);
