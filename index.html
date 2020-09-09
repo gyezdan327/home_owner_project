@@ -8,14 +8,16 @@
     </style>
 
     <!-- Necessary imports for firebase -->
-    <script type='text/javascript' src='config.js'></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
     <script>
+      //Import the config file
+      const config = require("../config");
+
       // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
+      firebase.initializeApp(config);
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
     </script>
   </head>
