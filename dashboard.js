@@ -13,3 +13,20 @@ function getrandHumidity (randInt){
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
+
+function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(weatherApiCall);
+    }
+    else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function weatherApiCall(position) {
+  var lat = position.coords.latitude;
+  var lon = position.coords.longitude;
+  fetch('api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=d817246c586a57025da6e2dc8916468f') 
+  .then(response => response.json())
+  .then(data => console.log(data));
+}
