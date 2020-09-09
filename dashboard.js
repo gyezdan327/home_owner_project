@@ -29,4 +29,6 @@ function weatherApiCall(position) {
   fetch('api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=d817246c586a57025da6e2dc8916468f') 
   .then(response => response.json())
   .then(data => console.log(data));
+
+  console.log(response);
 }
