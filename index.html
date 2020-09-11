@@ -14,19 +14,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
     <script>
-      //Define credentials from config.js
-      config = {
-        apiKey: fireBaseConfig.apiKey,
-        authDomain: fireBaseConfig.authDomain,
-        databaseURL: fireBaseConfig.databaseURL,
-        projectId: fireBaseConfig.projectId,
-        storageBucket: fireBaseConfig,storageBucket,
-        messagingSenderId: fireBaseConfig.messagingSenderId,
-        appId: fireBaseConfig.appId
-      };
-
       // Initialize Firebase
-      firebase.initializeApp(config);
+      firebase.initializeApp(fireBaseConfig);
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
     </script>
   </head>
