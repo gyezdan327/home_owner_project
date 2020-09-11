@@ -23,7 +23,7 @@
     <script>
       getLocation();
     </script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <header class="site-header">
@@ -51,27 +51,36 @@
 
 
 
-      <div class="container-fluid shadow p-3 mb-5 rounded" style="height: 600px; margin-top: -25px; margin-bottom: 25px; background-color: rgba(37, 1, 49, 0.05)">
+      <div class="container-fluid shadow p-3 mb-5 rounded" style="height: 502px; margin-top: -25px; margin-bottom: 25px; background-color: rgba(37, 1, 49, 0.05)">
 
       			<font style = "font-size: 25px"> <script> d = new Date(); document.write(d.toDateString())</script> </font>
+            <p> <small id="state"></small><small id="country"></small> </p>
 
 
-<hr style="margin-top: 5px; margin-bottom: 5px">
+<hr style="margin-top: -15px; margin-bottom: 5px">
 
-      	 <div style="float:left; margin-top: -30px;"> <span>
+
+  <div id="icon" style="float: left"><img id="wicon" src="" alt="Weather icon"></div> 
+      <text id="main" style="font-size : 30px; margin-left: 25px"></text> 
+      <p> <small id = "details"></small> </p> 
+
+
+<hr style="margin-top: -15px; margin-bottom: 5px">
+
+  <div style=" float: left; margin-top: -30px;"> <span>
       		<svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-thermometer-half" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M6 2a2 2 0 1 1 4 0v7.627a3.5 3.5 0 1 1-4 0V2zm2-1a1 1 0 0 0-1 1v7.901a.5.5 0 0 1-.25.433A2.499 2.499 0 0 0 8 15a2.5 2.5 0 0 0 1.25-4.666.5.5 0 0 1-.25-.433V2a1 1 0 0 0-1-1z"/>
   <path d="M8.25 2a.25.25 0 0 0-.5 0v9.02a1.514 1.514 0 0 1 .5 0V2z"/>
   <path d="M9.5 12.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
 </svg>
       		<font style="font-size : 80px;  margin-left: 25px"><b id="temp">- °F</b></font> </span> </div>
-      		
-
-      	 <div style="float:left; margin-top: -40px;"> <span>
+  
+<div style="float: left; margin-top: -40px;"> <span>
 <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-droplet-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6zM6.646 4.646c-.376.377-1.272 1.489-2.093 3.13l.894.448c.78-1.559 1.616-2.58 1.907-2.87l-.708-.708z"/>
 </svg> 
       		<font style="font-size : 80px; margin-left: 25px"><b id="humidity">- %</b></font> </span> </div>
+
 
 </div>
 
@@ -103,7 +112,7 @@
 
 <div class="justify-content-center text-center">
 
-<small> Study </small>
+<small> <a href='plots.html' style="color: #000000"> Study </a></small>
 
 
 <br>
@@ -141,7 +150,7 @@ Temperature: <script> getrandTemp(randInt)</script>&#176F
 
 <div class="justify-content-center text-center">
 
-<small> Kitchen </small>
+<small> <a href='plots.html' style="color: #000000"> Kitchen </small>
 
 
 <br>
@@ -177,7 +186,7 @@ Temperature: <script> getrandTemp(randInt)</script>&#176F
 
 <div class="justify-content-center text-center">
 
-<small> Living Room </small>
+<small> <a href='plots.html' style="color: #000000"> Living Room </small>
 
 
 <br>
@@ -242,7 +251,7 @@ Temperature: <script> getrandTemp(randInt)</script>&#176F
 
 <div class="justify-content-center text-center">
 
-<small> Dining Room </small>
+<small> <a href='plots.html' style="color: #000000"> Dining Room </small>
 
 
 <br>
@@ -276,7 +285,7 @@ Temperature: <script> getrandTemp(randInt)</script>&#176F
 
 <div class="justify-content-center text-center">
 
-<small> Bedroom 1 </small>
+<small> <a href='plots.html' style="color: #000000">Bedroom 1 </small>
 
 
 <br>
@@ -313,7 +322,7 @@ Temperature: <script> getrandTemp(randInt)</script>&#176F
 
 <div class="justify-content-center text-center">
 
-<small> Bedroom 2 </small>
+<small> <a href='plots.html' style="color: #000000"> Bedroom 2 </small>
 
 
 <br>
@@ -343,11 +352,6 @@ Temperature: <script> getrandTemp(randInt)</script>&#176F
         
 
     </main>
-
-
-
-
-
 
 
 </body>

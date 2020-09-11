@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <!------ Include the above in your HEAD tag ---------->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="{% static 'forum/main.css' %}">
+
+    <title> HomeMonitor</title>
+    
+    <!-- Include the backend JS script -->
+    <script type='text/javascript' src='config.js'></script>
+    <script type='text/javascript' src="dashboard.js"></script>
+    <script>
+      getLocation();
+    </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-fixed-top" style="background-color: #4b0256 ; color: #ffffff">
+        <div class="container">
+          <h6> Home<b>Monitor</b></h6>     
+        </div>
+      </nav>
+    </header>
+
+
+
+
+    <main role="main" class="container">
+       <div class="row">
+
+
+
+<!-- ______________________________________Weather Segment_____________________________________________________________________________ -->
+
+
+       	<div class="col-4"><div class="container-fluid shadow p-3 mb-5" style="margin-top:5px; background-color: #250131; color: #ffffff">
+            Weather
+        </div>
+
+
+
+      <div class="container-fluid shadow p-3 mb-5 rounded" style="height: 500px; margin-top: -25px; margin-bottom: 25px; background-color: rgba(37, 1, 49, 0.05)">
+
+      			<font style = "font-size: 25px"> <script> d = new Date(); document.write(d.toDateString())</script> </font>
+            <p> <small id="state"></small><small id="country"></small> </p>
+
+
+<hr style="margin-top: -15px; margin-bottom: 5px">
+
+
+  <div id="icon" style="float: left"><img id="wicon" src="" alt="Weather icon"></div> 
+      <text id="main" style="font-size : 30px; margin-left: 25px"></text> 
+      <p> <small id = "details"></small> </p> 
+
+
+<hr style="margin-top: -15px; margin-bottom: 5px">
+
+  <div style=" float: left; margin-top: -30px;"> <span>
+      		<svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-thermometer-half" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M6 2a2 2 0 1 1 4 0v7.627a3.5 3.5 0 1 1-4 0V2zm2-1a1 1 0 0 0-1 1v7.901a.5.5 0 0 1-.25.433A2.499 2.499 0 0 0 8 15a2.5 2.5 0 0 0 1.25-4.666.5.5 0 0 1-.25-.433V2a1 1 0 0 0-1-1z"/>
+  <path d="M8.25 2a.25.25 0 0 0-.5 0v9.02a1.514 1.514 0 0 1 .5 0V2z"/>
+  <path d="M9.5 12.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+</svg>
+      		<font style="font-size : 80px;  margin-left: 25px"><b id="temp">- °F</b></font> </span> </div>
+  
+<div style="float: left; margin-top: -40px;"> <span>
+<svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-droplet-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6zM6.646 4.646c-.376.377-1.272 1.489-2.093 3.13l.894.448c.78-1.559 1.616-2.58 1.907-2.87l-.708-.708z"/>
+</svg> 
+      		<font style="font-size : 80px; margin-left: 25px"><b id="humidity">- %</b></font> </span> </div>
+
+
+
+</div>
+
+
+
+        </div>
+
+
+
+<!-- ______________________________________Home Sensors____________________________________________________________________________ --> 
+
+
+        <div class="col-8">
+            <div class="container-fluid shadow p-3 mb-5" style="margin-top:5px; background-color: rgba(37, 1, 49); color: #ffffff">
+            Your Home
+        </div>
+
+ <div class="container-fluid shadow p-3 mb-5 rounded" style="height: 500px; margin-top: -25px; margin-bottom: 25px; background-color: rgba(37, 1, 49, 0.05)">
+
+        <div class="Chart" style="height: 240px">
+        <canvas id="myTempChart"> <script> BuildChart() </script></canvas>
+        </div>
+        <div style="height: 240px">
+          <canvas id="myHumidityChart"><script> BuildChart() </script></canvas>
+        </div>
+</div>
+        
+
+    </main>
+
+
+
+
+
+
+
+</body>
+</html>
