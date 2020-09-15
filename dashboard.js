@@ -142,7 +142,6 @@ function newsApiCall() {
 }
 
 function processNewsJson(json){
-	console.log(json.results[0].title)
 	document.getElementById("headline1").innerHTML = json.results[0].title;
 	document.getElementById("link1").setAttribute("href", json.results[0].url);
 	document.getElementById("headline2").innerHTML = json.results[1].title;
