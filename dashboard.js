@@ -47,10 +47,6 @@ function weatherApiCall(position) {
 }
 
 function processJson(json) {
-	//name of the city
-	console.log(json.name);
-	//Weather in words (i.e. Sunny, Clouds, etc.)
-	console.log(json.weather[0].main);
 	//temperature in Fahrenheit
 	var temp = Math.round((json.main.temp - 273.15) * 1.8 + 32);
 	//humidity in percent
