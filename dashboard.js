@@ -51,7 +51,6 @@ function processJson(json) {
 	console.log(json.name);
 	//Weather in words (i.e. Sunny, Clouds, etc.)
 	console.log(json.weather[0].main);
-	console.log(json)
 	//temperature in Fahrenheit
 	var temp = Math.round((json.main.temp - 273.15) * 1.8 + 32);
 	//humidity in percent
@@ -137,3 +136,21 @@ function BuildChart() {
 	return 0;
 }
 
+
+function newsApiCall() {
+	fetch("https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key="+ newsApiConfig.key)
+	.then((response) => response.json())
+	.then((json) => processNewsJson(json))
+	.catch((error) => console.log(error));
+  return 0;
+}
+
+function processNewsJson(json){
+	console.log(json.results[0].title)
+	document.getElementById("headline1").innerHTML = json.results[0].title;
+	document.getElementById("link1").setAttribute("href", json.results[0].url);
+	document.getElementById("headline2").innerHTML = json.results[1].title;
+	document.getElementById("link2").setAttribute("href", json.results[1].url);
+	document.getElementById("headline3").innerHTML = json.results[2].title;
+	document.getElementById("link3").setAttribute("href", json.results[2].url);
+}

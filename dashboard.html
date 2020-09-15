@@ -22,6 +22,7 @@
     <script type='text/javascript' src="dashboard.js"></script>
     <script>
       getLocation();
+      newsApiCall();
     </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -45,7 +46,8 @@
 <!-- ______________________________________Weather Segment_____________________________________________________________________________ -->
 
 
-       	<div class="col-4"><div class="container-fluid shadow p-3 mb-5" style="margin-top:5px; background-color: #250131; color: #ffffff">
+       	<div class="col-4">
+          <div class="container-fluid shadow p-3 mb-5" style="margin-top:5px; background-color: #250131; color: #ffffff">
             Weather
         </div>
 
@@ -79,14 +81,21 @@
 <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-droplet-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6zM6.646 4.646c-.376.377-1.272 1.489-2.093 3.13l.894.448c.78-1.559 1.616-2.58 1.907-2.87l-.708-.708z"/>
 </svg> 
-      		<font style="font-size : 80px; margin-left: 25px"><b id="humidity">- %</b></font> </span> </div>
+      		<font style="font-size : 80px; margin-left: 25px"><b id="humidity">- %</b></font> </span> 
+        </div>
 
+<hr style="margin-top: 175px; margin-bottom: 5px">
+<div><b>In the News...</b></p></div>
+<ul>
+<li style="margin-left: -25px"><div style="margin-top: -15px"><a id="link1" href="" style = "color: #000000"><small id='headline1'></small></a></div></li>
+<li style="margin-left: -25px"><a id="link2" href="" style = "color: #000000"><small id='headline2'></small></a></li>
+<li style="margin-left: -25px"><div><a id="link3" href="" style = "color: #000000"><small id='headline3'></small></a></div></li>
+</ul>
 
+</div>
 </div>
 
 
-
-        </div>
 
 
 
