@@ -17,7 +17,7 @@ function getrandHumidity(randInt) {
 	return randHumidity;
 }
 
-//simple function for the functions above to assign a random integer
+//simple function for the functions above to get a random integer
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -25,14 +25,14 @@ function getRndInteger(min, max) {
 //Calls the getCurrentPosition function only if browser supports
 function getLocation() {
   if (navigator.geolocation) {
-	navigator.geolocation.getCurrentPosition(weatherApiCall);
-	  }
-	else { 
-	    x.innerHTML = "Geolocation functionalities are not  supported by this browser.";
-	  }
+    navigator.geolocation.getCurrentPosition(weatherApiCall);
+	}
+	else {
+    x.innerHTML = "Geolocation functionalities are not  supported by this browser.";
+	}
 }
 
-//Actual call statement to the API from the received coordinates
+//Call API from the received coordinates
 function weatherApiCall(position) {
 	var lat = position.coords.latitude;
 	var lon = position.coords.longitude;
@@ -46,8 +46,9 @@ function weatherApiCall(position) {
   return 0;
 }
 
+//gets the json and extracts information to display on frontend
 function processJson(json) {
-	//temperature in Fahrenheit
+	//temperature in Fahrenheit (conversion from K)
 	var temp = Math.round((json.main.temp - 273.15) * 1.8 + 32);
 	//humidity in percent
 	var humidity = json.main.humidity;
@@ -64,10 +65,7 @@ function processJson(json) {
 	$('#wicon').attr('src', iconurl);
 }
 
-
-
 //Build simulated charts for temperatures and humidities for each room.
-
 function BuildChart() {
 
 	//get current time for axes
@@ -85,12 +83,10 @@ function BuildChart() {
 	
 
 	// Temperature Chart 
-
 	var ctx = document.getElementById('myTempChart').getContext('2d');
 	var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'line',
-
     // The data for our dataset
     data: {
         labels: [(time-5).toString()+':00', (time-4).toString()+':00', (time-3).toString()+':00', (time-2).toString()+':00', (time-1).toString()+':00', (time).toString()+':00'],
@@ -108,7 +104,6 @@ function BuildChart() {
 
 
 	// Humidity Chart 
-
 	var ctx = document.getElementById('myHumidityChart').getContext('2d');
 	var chart = new Chart(ctx, {
 	    // The type of chart we want to create
@@ -132,7 +127,7 @@ function BuildChart() {
 	return 0;
 }
 
-
+//Calls the news API with key from config file.
 function newsApiCall() {
 	fetch("https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key="+ newsApiConfig.key)
 	.then((response) => response.json())
@@ -141,6 +136,7 @@ function newsApiCall() {
   return 0;
 }
 
+//Gets the json for the news, extracts needed information and sends to frontend
 function processNewsJson(json){
 	document.getElementById("headline1").innerHTML = json.results[0].title;
 	document.getElementById("link1").setAttribute("href", json.results[0].url);
