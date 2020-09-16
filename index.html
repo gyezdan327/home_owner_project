@@ -21,6 +21,7 @@
   </head>
 
   <body>
+    <!-- Core of the project, includes the firebase container UI and the loader for when it is loading -->
     <h1>EC463 Mini Project</h1>
     <div id="firebaseui-auth-container"></div>
     <div id="loader">Loading...</div>
@@ -43,9 +44,11 @@
         },
         // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
         signInFlow: 'popup',
+        //redirect users to dashboard when successfully signed in
         signInSuccessUrl: 'dashboard.html',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
+          //In this case I will choose the GoogleAuth and FacebookAuth as the two means of signing in.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
           firebase.auth.FacebookAuthProvider.PROVIDER_ID,
         ]
