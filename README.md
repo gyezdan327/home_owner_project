@@ -80,25 +80,25 @@ Any other preferred method of running a simple html or directory locally can be 
 
 Integration testing with the three external APIs have been conducted.
 
-<h5>Test Case 1 - User log-in using Google, Browser's first time on website, six rooms with temperature/humidity sensors</h5>
+<h4>Test Case 1 - User log-in using Google, Browser's first time on website, six rooms with temperature/humidity sensors</h4>
 
 **Expected Behavior:** Successfully log-in via Google Authentication, redirected to dashboard where the user can see the six rooms temperature/humidity. Browser should ask for permission to use location services, and if the user allows, the current location's weather will be shown. News headlines shold be loaded at log-in.
 
 **Test Result:** [x]
 
-<h5>Test Case 2 - User log-in using Facebook, Browser's first time on website, six rooms with temperature/humidity sensors</h5>
+<h4>Test Case 2 - User log-in using Facebook, Browser's first time on website, six rooms with temperature/humidity sensors</h4>
 
 **Expected Behavior:** Successfully log-in via Facebook Authentication, redirected to dashboard where the user can see the six rooms temperature/humidity. Browser should ask for permission to use location services, and if the user allows, the current location's weather will be shown. News headlines shold be loaded at log-in.
 
 **Test Result:** [x]
 
-<h5>Test Case 3 - User logged on using Google, but later decides to use Facebook to log-in as another user</h5>
+<h4>Test Case 3 - User logged on using Google, but later decides to use Facebook to log-in as another user</h4>
 
 **Expected Behavior:** Prompts that the user already has an account with Google associated with this application, and redirects user to Google log-in.
 
 **Test Result:** [x]
 
-<h5>Test Case 4 - User's browser doesn't support GeoLocation</h5>
+<h4>Test Case 4 - User's browser doesn't support GeoLocation</h4>
 
 **Expected Behavior:** Temperatures and humidities of rooms are still accessible, news headlines are also accessible, current location's temperature and humidity should stay blank (-).
 
