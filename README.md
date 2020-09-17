@@ -35,10 +35,9 @@ Once the users are signed in, the user can see three main elements:
 
 You will need a configuration file named "config.js" so as to be able to access the API necessary. Please place it in the root folder of your cloned local repository. User/.../home_owner_project/
 
-The config file should look like:
+The config file should look like the following
 
--------------------------------------------------------------------------------------------------------------------------------------
-var fireBaseConfig = {
+```var fireBaseConfig = {
 	*Insert Firebase configuratio here*
 };
 
@@ -49,9 +48,10 @@ var weatherApiConfig = {
 var newsApiConfig = {
 	key: "*Insert API Key for New York Times' Most Popular API*"
 };
---------------------------------------------------------------------------------------------------------------------------------------
+```
 
-We will also be happy to send you the configuration file viaemail if you reach out to us.
+
+We will also be happy to send you the configuration file via email if you reach out to us.
 
 In your terminal or command line, install http-server (Node tool used to host simple web applications locally) by one of either way.
 
