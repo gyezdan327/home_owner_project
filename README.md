@@ -18,11 +18,11 @@ The web application is structured with three HTML files and one JavaScript file.
 - Index.html
   - Holds the SSO feature utilizing FireBase authorization. Tokens recieved in the Google Cloud Services and Facebook Applications are used to make SSO possible.
 - dashboard.html
-  - Test
+  - Utilizes css files and graphic libraries for icons and widgets. Also implements the weather icons for displaying the current location's weather.
 - dashboard.js
   - Includes a multitude of functions, mainly handling the replication of sensor values of temperature and humidity, API calls to AccuWeather  for weather by location and the New York Times for current news headlines.
 - plots.html
-  - test
+  - HTML for the temperature and humidity plots per rooms. Utilizes libraries to create a visually dynamic deviation graph of the temperature and humidity.
 
 ## Running HomeMonitor
 
