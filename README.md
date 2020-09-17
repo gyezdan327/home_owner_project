@@ -13,7 +13,10 @@ Once the users are signed in, the user can see three main elements:
 
 ## Technical Specifications
 
-The web application is structured with three HTML files and one JavaScript file.
+Front End: HTML, CSS, JavaScript
+**Back End:** JavaScript, Fetch
+**Local Testing:** node tools, http-server
+**APIs:** Accuweather, New York Times
 
 - Index.html
   - Holds the SSO feature utilizing FireBase authorization. Tokens recieved in the Google Cloud Services and Facebook Applications are used to make SSO possible.
