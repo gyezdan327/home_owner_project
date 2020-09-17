@@ -52,6 +52,10 @@ Now you can visit http://localhost:8080 to see the application running. If you s
 
 Any other preferred method of running a simple html or directory locally can be used as well.
 
+## Future Updates
+
+The UI which was developed can easily be integrated with a real life temperature and humidity sensors. Also, by attaching a database, it will be possible to store the user's temperature and humidity readings, or their frequently checked rooms, a lot of customization is possible.
+
 ## Troubleshooting
 
 When playing around with the contents locally, make sure to re-run the http-server, and force reload the localhost page on your browser to register the changes.
