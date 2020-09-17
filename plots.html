@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -13,21 +14,33 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
-
-
+    
+    <!-- Title -->
     <title> HomeMonitor</title>
     
     <!-- Include the backend JS script -->
     <script type='text/javascript' src='config.js'></script>
     <script type='text/javascript' src="dashboard.js"></script>
+
+    <!-- Call APIs after the config and dashboard js files are loaded -->
     <script>
       getLocation();
       newsApiCall();
     </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <!--Charts script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
 </head>
+
 <body>
+  <!-- Navigation/Top Bar -->
     <header class="site-header">
       <nav class="navbar navbar-fixed-top" style="background-color: #4b0256 ; color: #ffffff">
         <div class="container">
@@ -36,9 +49,7 @@
       </nav>
     </header>
 
-
-
-
+    <!-- Main Body -->
     <main role="main" class="container">
        <div class="row">
 
@@ -46,61 +57,81 @@
 
 <!-- ______________________________________Weather Segment_____________________________________________________________________________ -->
 
+  <div class="col-4">
 
-       	<div class="col-4"><div class="container-fluid shadow p-3 mb-5" style="margin-top:5px; background-color: #250131; color: #ffffff">
-            Weather
-        </div>
-
-
-
-      <div class="container-fluid shadow p-3 mb-5 rounded" style="height: 500px; margin-top: -25px; margin-bottom: 25px; background-color: rgba(37, 1, 49, 0.05)">
-
-      			<font style = "font-size: 25px"> <script> d = new Date(); document.write(d.toDateString())</script> </font>
-            <p> <small id="state"></small><small id="country"></small> </p>
+          <!-- Weather Section Title -->
+          <div class="container-fluid shadow p-3 mb-5" style="margin-top:5px; background-color: #250131; color: #ffffff">
+              Weather
+          </div>
 
 
-<hr style="margin-top: -15px; margin-bottom: 5px">
+          <div class="container-fluid shadow p-3 mb-5 rounded" style="height: 502px; margin-top: -25px; margin-bottom: 25px; background-color: rgba(37, 1, 49, 0.05)">
+        
+            <!-- Insert Date -->
+        <font style = "font-size: 25px"> <script> d = new Date(); document.write(d.toDateString())</script> </font>
+
+        <!-- Insert Current Location of User -->
+        <p> <small id="state"></small><small id="country"></small> </p>
+
+        <hr style="margin-top: -15px; margin-bottom: 5px">
+
+        <!-- Get icon for current weather -->
+        <div id="icon" style="float: left"><img id="wicon" src="" alt="Weather icon"></div> 
+      
+        <!-- Get main weather and weather details -->
+            <text id="main" style="font-size : 30px; margin-left: 25px"></text> 
+            <p> <small id = "details"></small> </p> 
 
 
-  <div id="icon" style="float: left"><img id="wicon" src="" alt="Weather icon"></div> 
-      <text id="main" style="font-size : 30px; margin-left: 25px"></text> 
-      <p> <small id = "details"></small> </p> 
+        <hr style="margin-top: -15px; margin-bottom: 5px">
 
+          <!-- Include section on current temperature -->
+          <div style=" float: left; margin-top: -30px;"> 
+            <span>
 
-<hr style="margin-top: -15px; margin-bottom: 5px">
+              <!-- Temperature Icon -->
+                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-thermometer-half" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M6 2a2 2 0 1 1 4 0v7.627a3.5 3.5 0 1 1-4 0V2zm2-1a1 1 0 0 0-1 1v7.901a.5.5 0 0 1-.25.433A2.499 2.499 0 0 0 8 15a2.5 2.5 0 0 0 1.25-4.666.5.5 0 0 1-.25-.433V2a1 1 0 0 0-1-1z"/>
+              <path d="M8.25 2a.25.25 0 0 0-.5 0v9.02a1.514 1.514 0 0 1 .5 0V2z"/>
+              <path d="M9.5 12.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
 
-  <div style=" float: left; margin-top: -30px;"> <span>
-      		<svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-thermometer-half" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M6 2a2 2 0 1 1 4 0v7.627a3.5 3.5 0 1 1-4 0V2zm2-1a1 1 0 0 0-1 1v7.901a.5.5 0 0 1-.25.433A2.499 2.499 0 0 0 8 15a2.5 2.5 0 0 0 1.25-4.666.5.5 0 0 1-.25-.433V2a1 1 0 0 0-1-1z"/>
-  <path d="M8.25 2a.25.25 0 0 0-.5 0v9.02a1.514 1.514 0 0 1 .5 0V2z"/>
-  <path d="M9.5 12.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-</svg>
-      		<font style="font-size : 80px;  margin-left: 25px"><b id="temp">- °F</b></font> </span> </div>
+            <!-- Current Temperature -->
+                <font style="font-size : 80px;  margin-left: 25px"><b id="temp">- °F</b></font>
+              </span>
+            </div>
   
-<div style="float: left; margin-top: -40px;"> <span>
-<svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-droplet-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6zM6.646 4.646c-.376.377-1.272 1.489-2.093 3.13l.894.448c.78-1.559 1.616-2.58 1.907-2.87l-.708-.708z"/>
-</svg> 
-      		<font style="font-size : 80px; margin-left: 25px"><b id="humidity">- %</b></font> </span> </div>
+          <!-- Include section on current humidity -->
+        <div style="float: left; margin-top: -40px;">
+          <span>
 
-<hr style="margin-top: 175px; margin-bottom: 5px">
-<b>In the News...</b></p>
-<ul>
-<li style="margin-left: -25px"><div style="margin-top: -15px"><a id="link1" href="" style = "color: #000000"><small id='headline1'></small></a></li>
-<li style="margin-left: -25px"><a id="link2" href="" style = "color: #000000"><small id='headline2'></small></a></li>
-<li style="margin-left: -25px"><div><a id="link3" href="" style = "color: #000000"><small id='headline3'></small></a></li>
-</ul>
+            <!-- Humidity Icon -->
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-droplet-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6zM6.646 4.646c-.376.377-1.272 1.489-2.093 3.13l.894.448c.78-1.559 1.616-2.58 1.907-2.87l-.708-.708z"/>
+            </svg> 
+            
+                <!-- Current Humidity -->
+                <font style="font-size : 80px; margin-left: 25px"><b id="humidity">- %</b></font>
+              </span> 
+            </div>
+
+        <hr style="margin-top: 175px; margin-bottom: 5px">
+        
+        <!-- News Section -->
+        <div><b>In the News...</b></p></div>
+        
+        <!-- List today's most popular stories -->
+        <ul>
+          <li style="margin-left: -25px"><div style="margin-top: -15px"><a id="link1" href="" style = "color: #000000"><small id='headline1'></small></a></div></li>
+          <li style="margin-left: -25px"><a id="link2" href="" style = "color: #000000"><small id='headline2'></small></a></li>
+          <li style="margin-left: -25px"><div><a id="link3" href="" style = "color: #000000"><small id='headline3'></small></a></div></li>
+        </ul>
+
+      </div>
+    </div>
 
 
-</div>
-
-
-
-        </div>
-
-
-
-<!-- ______________________________________Home Sensors____________________________________________________________________________ --> 
+<!-- ______________________________________Pots____________________________________________________________________________ --> 
 
 
         <div class="col-8">
@@ -108,16 +139,22 @@
             Your Home
         </div>
 
- <div class="container-fluid shadow p-3 mb-5 rounded" style="height: 500px; margin-top: -25px; margin-bottom: 25px; background-color: rgba(37, 1, 49, 0.05)">
+        <div class="container-fluid shadow p-3 mb-5 rounded" style="height: 500px; margin-top: -25px; margin-bottom: 25px; background-color: rgba(37, 1, 49, 0.05)">
 
+
+        <!--Temperature Chart-->  
         <div class="Chart" style="height: 240px">
-        <canvas id="myTempChart"> <script> BuildChart() </script></canvas>
+          <canvas id="myTempChart"> <script> BuildChart() </script></canvas>
         </div>
+
+        <!--Humidity Chart-->
         <div style="height: 240px">
           <canvas id="myHumidityChart"><script> BuildChart() </script></canvas>
         </div>
+
+        <!--Return to Dashboard Option -->
         <a href="dashboard.html"> <small style="float: right">Back to Home</small> </a>
-</div>
+        </div>
         
 
     </main>

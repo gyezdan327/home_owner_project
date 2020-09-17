@@ -6,6 +6,7 @@ Once the users are signed in, the user can see three main elements:
 
 1. Temperature/Humidity readings per room
    - Once the room names are clicked, the users can see the temperature and humidity plot for the past 5 hours for that specific room.
+   - Note that temperatures and humidity reading for each room from the sensors are simulated by randomly drawing from a set of possible temperatures and humidities. 
 2. Weather report from user's GPS location
    - Once logged in to the dashboard page, your browser prompts you for your location. If they allow this, the application shows your current location, written weather, temperature and humidity.
 3. News headings
@@ -32,9 +33,25 @@ Once the users are signed in, the user can see three main elements:
 
 ## Running HomeMonitor
 
-We will attach the configuration file which includes FireBase and API keys. Please place it in the root folder of your cloned local repository. User/.../home_owner_project/
+You will need a configuration file named "config.js" so as to be able to access the API necessary. Please place it in the root folder of your cloned local repository. User/.../home_owner_project/
 
-Whoever is reading this yet has not recieved the configuration file, please contact us from the email below and we will be happy to send you the configuration file.
+The config file should look like:
+
+-------------------------------------------------------------------------------------------------------------------------------------
+var fireBaseConfig = {
+	*Insert Firebase configuratio here*
+};
+
+var weatherApiConfig = {
+    key: "*Insert API Key for AccuWeather*"
+};
+
+var newsApiConfig = {
+	key: "*Insert API Key for New York Times' Most Popular API*"
+};
+--------------------------------------------------------------------------------------------------------------------------------------
+
+We will also be happy to send you the configuration file viaemail if you reach out to us.
 
 In your terminal or command line, install http-server (Node tool used to host simple web applications locally) by one of either way.
 
