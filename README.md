@@ -37,7 +37,8 @@ You will need a configuration file named "config.js" so as to be able to access 
 
 The config file should look like the following
 
-```var fireBaseConfig = {
+```
+var fireBaseConfig = {
 	*Insert Firebase configuratio here*
 };
 
