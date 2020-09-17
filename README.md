@@ -14,8 +14,11 @@ Once the users are signed in, the user can see three main elements:
 ## Technical Specifications
 
 **Front End:** HTML, CSS, JavaScript
+
 **Back End:** JavaScript, Fetch
+
 **Local Testing:** node tools, http-server
+
 **APIs:** Accuweather, New York Times
 
 - Index.html
