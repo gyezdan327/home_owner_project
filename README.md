@@ -76,6 +76,22 @@ Now you can visit http://localhost:8080 to see the application running. If you s
 
 Any other preferred method of running a simple html or directory locally can be used as well.
 
+## Testing
+
+Integration testing with the three external APIs have been conducted.
+
+**Test Case 1 - User log-in using Google, Browser's first time on website, six rooms with temperature/humidity sensors**
+Expected Behavior: Successfully log-in, redirected to dashboard where the user can see the six rooms temperature/humidity. Browser should ask for permission to use location services, and if the user allows, the current location's weather will be shown. News headlines shold be loaded at log-in.
+Test Result: [x]
+
+**Test Case 2 - User logged on using Google, but later decides to use Facebook to log-in as another user**
+Expected Behavior: Prompts that the user already has an account with Google associated with this application, and redirects user to Google log-in.
+Test Result: [x]
+
+**Test Case 3 - User's browser doesn't support GeoLocation**
+Expected Behavior: Temperatures and humidities are still accessible, news headlines are also accessible, current location's temperature and humidity should stay blank (-).
+Test Result: [ ] (No access to such browser)
+
 ## Future Updates
 
 The UI which was developed can easily be integrated with a real life temperature and humidity sensors. Also, by attaching a database, it will be possible to store the user's temperature and humidity readings, or their frequently checked rooms, a lot of customization is possible.
