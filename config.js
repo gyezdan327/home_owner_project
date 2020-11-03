@@ -1,11 +1,16 @@
-var fireBaseConfig = {
-//Insert firbase configuration here
-};
+var fireBaseConfig = ${{ FIREBASE_CONFIG }}$
 
-var weatherApiConfig = {
-    key: "//Insert Accuweather API Key here"
-};
+// {
+// //Insert firbase configuration here
+// };
 
-var newsApiConfig = {
-	key: "//Insert New York Times most Popular News API Key here"
-};
+var weatherApiConfig = ${{ WEATHER_CONFIG }}$
+// {
+//     key: "//Insert Accuweather API Key here"
+// };
+
+var newsApiConfig = ${{ NEWS_CONFIG }}$
+    
+//     {
+// 	key: "//Insert New York Times most Popular News API Key here"
+// };
